@@ -40,20 +40,24 @@ require 'config.php';
 			
 		</div>
 		
-		<form>
+		<form method="POST" action="initiate_payment.php">
 			<script src="https://checkout.flutterwave.com/v3.js"></script>
 			<label>Name</label>
 			<input type="text" id="name" class="form-control"><br>
 
 			<input type="hidden" id="ticket_id" value="<?php echo $id?>">
 
-			<input type="hidden" id="amount" value="<?php echo $price?>">
+			<input type="hidden" type="number" id="amount" value="<?php echo $price?>">
 
 			<label>Phone number</label>
-			<input type="text" id="phone number" class="form-control"><br>
+			<input type="text" id="phone_number" class="form-control"><br>
+
 
 			<label>Email</label>
 			<input type="text" id="email" class="form-control">
+
+			<input type="number" id="plan_id" hidden="true" name="plan_id" value="<?php echo (int) $id?>">
+
 			<hr>
 			<button type="button" id ="make_payment" class= "btn btn-info" >pay now</button>
 		</form>
@@ -90,9 +94,9 @@ require 'config.php';
 		})
 
 		function makePayment(tx_ref){
-			flutterwaveCheckout({
+			FlutterwaveCheckout({
 				public_key:"FLWPUBK-fdf258473843df0a0cfdc450f5669a7a-X",
-				tx_ref: tx_ref,
+				tx_ref: 'tx_ref',
 				amount:$("#amount").val(),
 				currency: "UGX",
 				country: "UG",

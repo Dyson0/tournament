@@ -14,7 +14,7 @@ require 'config.php';
 		<div container>
 		<h1>Football ticket for (Uganda cranes Vs Harampe stars</h1>
 		<hr>
-		<span style="font-size: 40px;"><?php echo $_GET['$message']?></span>
+		<span style="font-size: 40px;"><?php echo $_GET['message']?></span>
 			
 		</div>
 	</main>
