@@ -1,2 +1,2 @@
 <?php 
-$dbConnection = new mysqli("localhost","root","Asingwir3*","tournament");
+$dbConnection = new mysqli("localhost","Dyson","DysonLuv12345","tournament");
